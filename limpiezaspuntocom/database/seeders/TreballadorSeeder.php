@@ -37,6 +37,5 @@ class TreballadorSeeder extends Seeder
             'ServeiID' => 2
         ]);
 
-        // Agrega más registros según tus necesidades...
     }
 }
