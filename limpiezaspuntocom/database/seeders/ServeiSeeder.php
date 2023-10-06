@@ -24,7 +24,5 @@ class ServeiSeeder extends Seeder
             'TipusDeServei' => 'Neteja doficines',
             'ClientID' => 2,
         ]);
-
-        // Agrega más registros según tus necesidades...
     }
 }

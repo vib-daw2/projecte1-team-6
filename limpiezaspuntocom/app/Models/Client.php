@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
-    protected $primaryKey = 'ClientID';
+    protected $fillable = ['Nom', 'Cognom', 'Telefon', 'Correu', 'Adreça', 'DNI'];
 
-    protected $fillable = [
-        'Nom', 'Cognom', 'Telefon', 'Correu', 'Adreça', 'DNI',
-    ];
+    public function serveis()
+    {
+        return $this->hasMany(Servei::class, 'ClientID');
+    }
 }
-

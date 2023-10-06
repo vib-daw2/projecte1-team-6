@@ -29,7 +29,6 @@ class ClientSeeder extends Seeder
             'DNI' => '87654321B',
         ]);
 
-        // Agrega más registros según tus necesidades...
     }
 }
 

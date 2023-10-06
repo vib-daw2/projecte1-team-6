@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Servei extends Model
 {
-    protected $primaryKey = 'ServeisID';
-
-    protected $fillable = [
-        'DataInici', 'DataFi', 'TipusDeServei', 'ClientID'
-    ];
+    protected $fillable = ['DataInici', 'DataFi', 'TipusDeServei', 'ClientID'];
 
     public function client()
     {
-        return $this->belongsTo(Cliente::class, 'ClientID');
+        return $this->belongsTo(Client::class, 'ClientID');
+    }
+
+    public function treballadors()
+    {
+        return $this->belongsToMany(Treballador::class, 'servei_treballador', 'ServeiID', 'TreballadorID');
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ServeiController;
+use App\Http\Controllers\TreballadorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,28 +20,39 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/webSegura', function () {
-    return "Estas autentificat!!";
-})->middleware('auth');
+Auth::routes();
 
-Route::group(['middleware'=>'auth'], function() {
-	Route::get('/planets', [App\Http\Controllers\PlanetController::class, 'index'])->name('planets.index');
-	Route::get('/planets/create', [App\Http\Controllers\PlanetController::class, 'create'])->name('planets.create');
-	Route::get('/planets/show/{planet}', [App\Http\Controllers\PlanetController::class, 'show'])->name('planets.show');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-	Route::post('/planets/store', [App\Http\Controllers\PlanetController::class, 'store'])->name('planets.store');
+// Rutas para Clientes
+Route::get('/clients', [ClientController::class, 'index']);
+Route::get('/clients/create', [ClientController::class, 'create']);
+Route::post('/clients', [ClientController::class, 'store']);
+Route::get('/clients/{client}', [ClientController::class, 'show']);
+Route::get('/clients/{client}/edit', [ClientController::class, 'edit']);
+Route::put('/clients/{client}', [ClientController::class, 'update']);
+Route::delete('/clients/{client}', [ClientController::class, 'destroy']);
 
-	Route::get('/planets/destroy/{planet}', [App\Http\Controllers\PlanetController::class, 'destroy'])->name('planets.destroy');
+// Rutas para Servicios
+Route::get('/serveis', [ServeiController::class, 'index']);
+Route::get('/serveis/create', [ServeiController::class, 'create']);
+Route::post('/serveis', [ServeiController::class, 'store']);
+Route::get('/serveis/{servei}', [ServeiController::class, 'show']);
+Route::get('/serveis/{servei}/edit', [ServeiController::class, 'edit']);
+Route::put('/serveis/{servei}', [ServeiController::class, 'update']);
+Route::delete('/serveis/{servei}', [ServeiController::class, 'destroy']);
 
-	Route::get('/planets/edit/{planet}', [App\Http\Controllers\PlanetController::class, 'edit'])->name('planets.edit');
-
-	Route::post('/planets/update/{planet}', [App\Http\Controllers\PlanetController::class, 'update'])->name('planets.update');
-});
+// Rutas para Trabajadores
+Route::get('/treballadors', [TreballadorController::class, 'index']);
+Route::get('/treballadors/create', [TreballadorController::class, 'create']);
+Route::post('/treballadors', [TreballadorController::class, 'store']);
+Route::get('/treballadors/{treballador}', [TreballadorController::class, 'show']);
+Route::get('/treballadors/{treballador}/edit', [TreballadorController::class, 'edit']);
+Route::put('/treballadors/{treballador}', [TreballadorController::class, 'update']);
+Route::delete('/treballadors/{treballador}', [TreballadorController::class, 'destroy']);
