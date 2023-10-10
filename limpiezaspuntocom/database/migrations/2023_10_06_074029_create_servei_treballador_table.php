@@ -12,8 +12,8 @@ return new class extends Migration
             $table->unsignedBigInteger('ServeiID');
             $table->unsignedBigInteger('TreballadorID');
     
-            $table->foreign('ServeiID')->references('ServeiID')->on('serveis')->onDelete('cascade');
-            $table->foreign('TreballadorID')->references('TreballadorID')->on('treballadors')->onDelete('cascade');
+            $table->foreign('ServeiID')->references('ID')->on('serveis')->onDelete('cascade');
+            $table->foreign('TreballadorID')->references('ID')->on('treballadors')->onDelete('cascade');
         });
     }
     

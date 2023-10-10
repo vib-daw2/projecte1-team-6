@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ServeiController;
 use App\Http\Controllers\TreballadorController;
+
+Route::resource('clients', ClienteController::class);
+Route::resource('serveis', ServeiController::class);
+Route::resource('treballadors', TreballadorController::class);
+
 
 /*
 |--------------------------------------------------------------------------

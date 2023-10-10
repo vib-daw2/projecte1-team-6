@@ -48,10 +48,10 @@ class ClientController extends Controller
     $request->validate([
         'Nom' => 'required|string|max:255',
         'Cognom' => 'required|string|max:255',
-        'Telefon' => 'required|string|max:15', // Supongo que es un número de teléfono
+        'Telefon' => 'required|string|max:15',
         'Correu' => 'required|email|max:255|unique:clients,Correu,' . $client->id,
         'Adreça' => 'required|string|max:255',
-        'DNI' => 'required|string|max:10|unique:clients,DNI,' . $client->id, // Asumiendo que el DNI es único
+        'DNI' => 'required|string|max:10|unique:clients,DNI,' . $client->id,
     ]);
 
     $client->update($request->all());
