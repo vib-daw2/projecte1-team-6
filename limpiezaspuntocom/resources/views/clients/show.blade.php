@@ -9,11 +9,12 @@
     <p>Correu: {{ $client->Correu }}</p>
     <p>Adreça: {{ $client->Adreça }}</p>
     <p>DNI: {{ $client->DNI }}</p>
+
     <h2>Serveis Associats</h2>
     <ul>
         @forelse($client->serveis as $servei)
             <li>
-                Servei ID: {{ $servei->ID }}, Data d'Inici: {{ $servei->DataInici }}, 
+                Servei ID: {{ $servei->ID }}, Data d'Inici: {{ $servei->DataInici }},
                 Data de Fi: {{ $servei->DataFi }}, Tipus de Servei: {{ $servei->TipusDeServei }}
             </li>
         @empty

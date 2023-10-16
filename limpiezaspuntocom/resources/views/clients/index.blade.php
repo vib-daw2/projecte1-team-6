@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($clients as $client)
+            @foreach ($clients as $client)
                 <tr>
                     <td>{{ $client->ClientID }}</td>
                     <td>{{ $client->Nom }}</td>
@@ -32,6 +32,7 @@
                     </td>
                 </tr>
             @endforeach
+            {{ $clients->links() }}
         </tbody>
     </table>
 @endsection

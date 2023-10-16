@@ -9,7 +9,6 @@
             <li><strong>Data Fi:</strong> {{ $servei->DataFi }}</li>
             <li><strong>Tipus de Servei:</strong> {{ $servei->TipusDeServei }}</li>
             <li><strong>Client ID:</strong> {{ $servei->ClientID }}</li>
-            <!-- Agrega más detalles según tus necesidades -->
         </ul>
         <a href="{{ route('serveis.edit', $servei) }}" class="btn btn-primary">Editar</a>
         <form action="{{ route('serveis.destroy', $servei) }}" method="POST" style="display: inline-block;">
