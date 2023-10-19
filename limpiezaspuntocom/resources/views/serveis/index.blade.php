@@ -22,12 +22,11 @@
                     <td>{{ $servei->TipusDeServei }}</td>
                     <td>{{ $servei->ClientID }}</td>
                     <td>
-                        <a href="{{ route('serveis.show', $servei) }}">Mostrar</a>
-                        <a href="{{ route('serveis.edit', $servei) }}">Editar</a>
+                        <a href="{{ route('serveis.show', ['servei' => $servei->ID]) }}">Mostrar</a>
+                        <a href="{{ route('serveis.edit', ['servei' => $servei->ID]) }}">Editar</a>
                     </td>
                 </tr>
             @endforeach
-            {{ $clients->links() }}
         </tbody>
     </table>
 @endsection

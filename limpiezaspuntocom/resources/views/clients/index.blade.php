@@ -2,7 +2,6 @@
 
 @section('content')
     <h1>Client List</h1>
-    <a href="{{ route('clients.create') }}">Add New Client</a>
     <table>
         <thead>
             <tr>
@@ -19,7 +18,7 @@
         <tbody>
             @foreach ($clients as $client)
                 <tr>
-                    <td>{{ $client->ClientID }}</td>
+                    <td>{{ $client->ID }}</td>
                     <td>{{ $client->Nom }}</td>
                     <td>{{ $client->Cognom }}</td>
                     <td>{{ $client->Telefon }}</td>
@@ -27,8 +26,8 @@
                     <td>{{ $client->Adreça }}</td>
                     <td>{{ $client->DNI }}</td>
                     <td>
-                        <a href="{{ route('clients.show', $client) }}">Mostrar</a>
-                        <a href="{{ route('clients.edit', $client) }}">Edita</a>
+                        <a href="{{ route('clients.show', ['clients' => $clients->ID]) }}">Mostrar</a>
+                        <a href="{{ route('clients.edit', ['clients' => $clients->ID]) }}">Edita</a>
                     </td>
                 </tr>
             @endforeach

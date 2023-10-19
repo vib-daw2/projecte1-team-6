@@ -56,7 +56,7 @@ class ServeiController extends Controller
     ]);
 
     $client->update($request->all());
-    return redirect()->route('clients.show', $client);
+    return redirect()->to('clients.show', $client);
 }   
 
     public function destroy(Servei $servei)

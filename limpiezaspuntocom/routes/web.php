@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServeiController;
 use App\Http\Controllers\TreballadorController;
 
@@ -31,33 +31,29 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 // Rutas para Clientes
-Route::get('/clients', [ClientController::class, 'index']);
-Route::get('/clients/create', [ClientController::class, 'create']);
-Route::post('/clients', [ClientController::class, 'store']);
-Route::get('/clients/{client}', [ClientController::class, 'show']);
-Route::get('/clients/{client}/edit', [ClientController::class, 'edit']);
-Route::put('/clients/{client}', [ClientController::class, 'update']);
-Route::delete('/clients/{client}', [ClientController::class, 'destroy']);
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
+Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
+Route::get('/clients/{client}', [ClientController::class, 'show'])->name('clients.show');
+Route::get('/clients/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
+Route::put('/clients/{client}', [ClientController::class, 'update'])->name('clients.update');
+Route::delete('/clients/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
 
 // Rutas para Servicios
-Route::get('/serveis', [ServeiController::class, 'index']);
-Route::get('/serveis/create', [ServeiController::class, 'create']);
-Route::post('/serveis', [ServeiController::class, 'store']);
-Route::get('/serveis/{servei}', [ServeiController::class, 'show']);
-Route::get('/serveis/{servei}/edit', [ServeiController::class, 'edit']);
-Route::put('/serveis/{servei}', [ServeiController::class, 'update']);
-Route::delete('/serveis/{servei}', [ServeiController::class, 'destroy']);
+Route::get('/serveis', [ServeiController::class, 'index'])->name('serveis.index');
+Route::get('/serveis/create', [ServeiController::class, 'create'])->name('serveis.create');
+Route::post('/serveis', [ServeiController::class, 'store'])->name('serveis.store');
+Route::get('/serveis/{servei}', [ServeiController::class, 'show'])->name('serveis.show');
+Route::get('/serveis/{servei}/edit', [ServeiController::class, 'edit'])->name('serveis.edit');
+Route::put('/serveis/{servei}', [ServeiController::class, 'update'])->name('serveis.update');
+Route::delete('/serveis/{servei}', [ServeiController::class, 'destroy'])->name('serveis.destroy');
 
 // Rutas para Trabajadores
-Route::get('/treballadors', [TreballadorController::class, 'index']);
-Route::get('/treballadors/create', [TreballadorController::class, 'create']);
-Route::post('/treballadors', [TreballadorController::class, 'store']);
-Route::get('/treballadors/{treballador}', [TreballadorController::class, 'show']);
-Route::get('/treballadors/{treballador}/edit', [TreballadorController::class, 'edit']);
-Route::put('/treballadors/{treballador}', [TreballadorController::class, 'update']);
-Route::delete('/treballadors/{treballador}', [TreballadorController::class, 'destroy']);
+Route::get('/treballadors', [TreballadorController::class, 'index'])->name('treballadors.index');
+Route::get('/treballadors/create', [TreballadorController::class, 'create'])->name('treballadors.create');
+Route::post('/treballadors', [TreballadorController::class, 'store'])->name('treballadors.store');
+Route::get('/treballadors/{treballador}', [TreballadorController::class, 'show'])->name('treballadors.show');
+Route::get('/treballadors/{treballador}/edit', [TreballadorController::class, 'edit'])->name('treballadors.edit');
+Route::put('/treballadors/{treballador}', [TreballadorController::class, 'update'])->name('treballadors.update');
+Route::delete('/treballadors/{treballador}', [TreballadorController::class, 'destroy'])->name('treballadors.destroy');

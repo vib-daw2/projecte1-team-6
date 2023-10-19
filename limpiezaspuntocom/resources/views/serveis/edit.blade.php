@@ -2,13 +2,13 @@
 
 @section('content')
     <h1>Editar Servei</h1>
-    <form action="{{ route('serveis.update', $servei) }}" method="post">
+    <form action="{{ route('serveis.update', ['servei' => $servei->ID]) }}" method="post">
         @csrf
         @method('PUT')
-
+        
         <label for="dataInici">Data Inici:</label>
         <input type="text" name="DataInici" id="dataInici" value="{{ $servei->DataInici }}">
-
+        
         <label for="dataFi">Data Fi:</label>
         <input type="text" name="DataFi" id="dataFi" value="{{ $servei->DataFi }}">
 
@@ -17,7 +17,7 @@
 
         <label for="clientID">Client ID:</label>
         <input type="text" name="ClientID" id="clientID" value="{{ $servei->ClientID }}">
-
-        <button type="submit">Guardar Cambis</button>
+        
+        <button type="submit">Guardar Cambios</button>
     </form>
 @endsection
