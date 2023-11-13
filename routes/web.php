@@ -5,7 +5,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServeiController;
 use App\Http\Controllers\TreballadorController;
 
-Route::resource('clients', ClienteController::class);
+Route::resource('clients', ClientController::class);
 Route::resource('serveis', ServeiController::class);
 Route::resource('treballadors', TreballadorController::class);
 

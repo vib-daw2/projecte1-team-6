@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
     <h1>Detalls del Client</h1>
     <p>ID: {{ $client->ClientID }}</p>

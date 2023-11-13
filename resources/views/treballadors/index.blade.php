@@ -6,7 +6,7 @@
         @foreach ($treballadors as $treballador)
             <li>
                 {{ $treballador->Nom }} {{ $treballador->Cognom }}
-                <a href="{{ route('treballadors.show', $treballador) }}">Detalls</a>
+                <a href="{{ route('treballador.show', ['treballadors' => $treballadors->ID]) }}">Detalls</a>
                 <a href="{{ route('treballadors.edit', $treballador) }}">Editar</a>
                 <form action="{{ route('treballadors.destroy', $treballador) }}" method="post">
                     @csrf

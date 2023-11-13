@@ -52,7 +52,9 @@ class ClientController extends Controller
         'Correu' => 'required|email|max:255|unique:clients,Correu,' . $client->id,
         'Adreça' => 'required|string|max:255',
         'DNI' => 'required|string|max:10|unique:clients,DNI,' . $client->id,
+        
     ]);
+    
 
     $client->update($request->all());
     return redirect()->route('clients.show', $client);

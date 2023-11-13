@@ -6,6 +6,8 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ServeiController;
 use App\Http\Controllers\TreballadorController;
 
+
+
 define('LARAVEL_START', microtime(true));
 
 /*
